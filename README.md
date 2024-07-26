@@ -39,8 +39,7 @@ print('{k.HEX(#FF5733)}This is HEX color text{k.RESET}.')
 ```
 
 ## Цвет в формате RGB:
-```
-python
+```python
 
 print('{k.RGB(75,0,130)}This is RGB color text{k.RESET}.')
 ```
