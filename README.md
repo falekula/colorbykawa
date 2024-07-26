@@ -1,120 +1,187 @@
-ColorByKawa
+## ColorByKawa
 
-colorbykawa — это библиотека для окрашивания текста в терминале с использованием ANSI-цветов. Библиотека предоставляет класс ColorByKawa, который содержит константы для различных цветов, а также методы для использования цветов в формате HEX и RGB.
-Установка
-
-Для установки библиотеки используйте pip:
+```
+ColorByKawa — это Python-класс для удобного форматирования текста с использованием ANSI-цветов в терминале. Он поддерживает стандартные цвета, расширенные 256-цветовые палитры, а также пользовательские цвета в форматах HEX и RGB.
+```
+## Установка
+```
+Вы можете установить пакет ColorByKawa с помощью pip. Введите следующую команду в терминале:
+```
 
 ```bash
 
 pip install colorbykawa
 ```
-## Инициализация
+
+## Пример использования
+
+```python
+Импортируйте библиотку:
+
+
+import colorbykawa
+```
+
+## Теперь, чтобы использовать цветные маркеры в строках, достаточно просто использовать print как обычно:
+
+## Стандартные цвета:
+
+```python
+
+print('{k.Red}This is red text{k.RESET} and {k.Green}this is green text{k.RESET}.')
+```
+
+## Цвет в формате HEX:
+
+```python
+
+print('{k.HEX(#FF5733)}This is HEX color text{k.RESET}.')
+```
+
+## Цвет в формате RGB:
+```
+python
+
+print('{k.RGB(75,0,130)}This is RGB color text{k.RESET}.')
+```
+
+## Примеры использования:
 
 ```python
 
 import colorbykawa
-# col можно заменить на любое другое название
-col = colorbykawa.ColorByKawa()
+
+
+# Стандартные цвета
+print('{k.Red}This is red text{k.RESET}')
+
+# HEX цвет
+print('{k.HEX(#00FF00)}This is HEX green text{k.RESET}')
+
+# RGB цвет
+print('{k.RGB(0,0,255)}This is RGB blue text{k.RESET}')
+```
+## Предопределенные цвета
+```
+ColorByKawa поддерживает следующие группы цветов:
+Стандартные цвета:
+
+    Black
+    Red
+    Green
+    Yellow
+    Blue
+    Magenta
+    Cyan
+    White
+    Gray
+    RedLight
+    GreenLight
+    YellowLight
+    BlueLight
+    MagentaLight
+    CyanLight
+    WhiteLight
+    BlackBright
+    RedBright
+    GreenBright
+    YellowBright
+    BlueBright
+    MagentaBright
+    CyanBright
+    WhiteBright
 ```
 
-## Примеры использования
-
-Вы можете использовать константы класса ColorByKawa для окрашивания текста в терминале. Вот несколько примеров:
-
-```python
-
-import colorbykawa
-
-a = colorbykawa.ColorByKawa()
-
-print(a.col('Red', "This is red text"))
-print(a.col('Green', "This is green text"))
-print(a.col('Blue', "This is blue text"))
-
-# Использование HEX-кода
-print(a.hcol('#ff5733', "This is custom HEX color text"))
-
-# Использование RGB значений
-print(a.rgb(255, 87, 51, "This is RGB color text"))
+## Цвета из палитры 256 цветов:
 ```
-## Доступные цвета
+    Orange
+    Purple
+    Turquoise
+    Brown
+    Pink
+    LightGray
+    DarkGray
+    LightRed
+    LightGreen
+    LightYellow
+    LightBlue
+    LightMagenta
+    LightCyan
+    LightWhite
+    DarkRed
+    DarkGreen
+    DarkYellow
+    DarkBlue
+    DarkMagenta
+    DarkCyan
+    DarkWhite
+    SkyBlue
+    SeaGreen
+    Indigo
+    Coral
+    Beige
+    Lime
+    Cherry
+    Salmon
+    Olive
+    Tan
+    IndigoBlue
+    Wheat
+    Honeydew
+    Mint
+    Rose
+    Moccasin
+    Caramel
+    Lavender
+    Mauve
+    Goldenrod
+    Ivory
+    Aquamarine
+    Raspberry
+    Cantaloupe
+    Ash
+    Chocolate
+    Emerald
+    Ruby
+    TerraCotta
+    MintGreen
+    Blush
+    Tangerine
+    Auburn
+    Coffee
+    Papaya
+    CherryRed
+    Cinnamon
+    Daffodil
+    MossGreen
+    Aubergine
+    Lilac
+    MoonYellow
+    Eggplant
+    PapayaWhip
+    Granite
+    Khaki
+    Sunflower
+    MauveTaupe
+    Fuchsia
 ```
-Класс ColorByKawa предоставляет следующие константы:
 
-    Red: Красный
-    Green: Зеленый
-    Yellow: Желтый
-    Blue: Синий
-    Magenta: Магентовый
-    Cyan: Циан
-    Reset: Сброс (возвращает цвет текста в исходное состояние)
-    White: Белый
-    LightGray: Светло-серый
-    LightRed: Светло-красный
-    LightGreen: Светло-зеленый
-    LightYellow: Светло-желтый
-    LightBlue: Светло-синий
-    LightMagenta: Светло-магентовый
-    LightCyan: Светло-циан
-    LightWhite: Светло-белый
-    Black: Черный
-    Orange: Оранжевый
-    Coral: Кораловый
-    Pink: Розовый
-    LightPink: Светло-розовый
-    LightCoral: Светло-коралловый
-    Salmon: Лососевый
-    Peach: Персиковый
-    Apricot: Абрикосовый
-    LightApricot: Светло-абрикосовый
-    Beige: Бежевый
-    Cream: Кремовый
-    Milk: Молочный
-    Ivory: Слоновая кость
-    Lemon: Лимонный
-    LightLemon: Светло-лимонный
-    Canary: Канареечный
-    LightCanary: Светло-канареечный
-    Salad: Салатный
-    LightSalad: Светло-салатный
-    Apple: Яблочный
-    LightApple: Светло-яблочный
-    Lime: Лаймовый
-    LightLime: Светло-лаймовый
-    Mint: Мятный
-    LightMint: Светло-мятный
-    Emerald: Изумрудный
-    LightEmerald: Светло-изумрудный
-    Turquoise: Бирюзовый
-    LightTurquoise: Светло-бирюзовый
-    Aquamarine: Аквамариновый
-    LightAquamarine: Светло-аквамариновый
-    Azure: Лазурный
-    LightAzure: Светло-лазурный
-    SkyBlue: Небесно-голубой
-```
-## Методы
-```
-## Метод col
-col(color_name, text)
-
-Окрашивает text в цвет, указанный в color_name, используя заранее определенные цвета.
-
-## Метод hcol
-hcol(hex_code, text)
-
-Окрашивает text в цвет, указанный в hex_code, используя цвет в формате HEX (#RRGGBB).
-
-## Метод rgb
-rgb(r, g, b, text)
-
-Окрашивает text в цвет, указанный в RGB значениях (r, g, b), где каждый параметр может быть в диапазоне от 0 до 255.
-```
 ## Примечание
-
+```
 Цвета отображаются корректно только в терминалах, которые поддерживают ANSI-коды. Если ваш терминал не поддерживает ANSI-коды, текст может не окрашиваться должным образом.
+```
 
-##Лицензия
+## Исключения
+```
+    ValueError: Поднимается при использовании некорректного формата HEX или RGB значений.
+```
 
-Этот проект лицензирован под лицензией MIT. См. файл LICENSE для получения подробной информации.
+## Замечания
+```
+    Убедитесь, что ваш терминал поддерживает ANSI-коды для правильного отображения цветов.
+```
+
+## Лицензия
+```
+Этот проект распространяется под лицензией MIT. См. LICENSE для подробной информации.
+```
