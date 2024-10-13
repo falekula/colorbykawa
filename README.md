@@ -10,7 +10,7 @@ ColorByKawa — это Python-класс для удобного формати�
 
 ```bash
 
-pip install colorbykawa
+pip install colorlibx
 ```
 
 ## Пример использования
